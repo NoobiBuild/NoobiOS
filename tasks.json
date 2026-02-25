@@ -1,0 +1,1795 @@
+{
+  "meta": {
+    "version": "2026.02.24-02",
+    "last_updated": "2026-02-24",
+    "timezone": "Africa/Johannesburg",
+    "structure": "pillars: RR, ALUM, TRAIN, OPS, STRAT, BUD",
+    "clusters": {
+      "A": "R&R: Strategy → Budget → Venue → Curriculum → Selection → Delivery → M&E → Alumni → Impact → Fundraising",
+      "B": "Ask Karabo: Comms → Website → Roadshow → Youth workshops → Guide publication → Portal integration",
+      "C": "Law Reform: Monitoring → Issue ID → Guide → Mobilisation → Parliamentary submission → Media",
+      "D": "Donor Compliance: Activity implementation → Data collection → Financial reconciliation → Narrative report → Board submission"
+    }
+  },
+  "owners": [
+    {
+      "owner_id": "MK",
+      "name": "Programme Head"
+    },
+    {
+      "owner_id": "FS",
+      "name": "Fadia (Admin & M&E)"
+    },
+    {
+      "owner_id": "TN",
+      "name": "Thami (Coordinator)"
+    },
+    {
+      "owner_id": "TAT",
+      "name": "Tatenda (Attorney)"
+    },
+    {
+      "owner_id": "DAN",
+      "name": "Dani (Senior Attorney)"
+    },
+    {
+      "owner_id": "TG",
+      "name": "TG (Senior Attorney)"
+    }
+  ],
+  "recurrence_rules": [
+    {
+      "id": "REC-001",
+      "title": "Weekly AS&T Check-in",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "frequency": "WEEKLY",
+      "day_of_week": "MONDAY",
+      "notes": "Internal coordination meeting — all team. Virtual unless noted."
+    },
+    {
+      "id": "REC-002",
+      "title": "Bi-Weekly Leadership Development 1:1s",
+      "pillar": "STRAT",
+      "owner_id": "MK",
+      "frequency": "BIWEEKLY",
+      "day_of_week": "TUESDAY",
+      "notes": "Protected leadership development sessions. No operational bookings."
+    },
+    {
+      "id": "REC-003",
+      "title": "Monthly Programme Review",
+      "pillar": "STRAT",
+      "owner_id": "MK",
+      "frequency": "MONTHLY",
+      "notes": "Review pillar progress, risks, delegation."
+    },
+    {
+      "id": "REC-004",
+      "title": "Monthly Budget Monitoring Check",
+      "pillar": "BUD",
+      "owner_id": "MK",
+      "frequency": "MONTHLY",
+      "notes": "Review burn rate vs AS&T FY27 sheet. Flag variances above 10%."
+    },
+    {
+      "id": "REC-005",
+      "title": "Bi-Weekly Team Coordination Meeting",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "frequency": "BIWEEKLY",
+      "day_of_week": "WEDNESDAY",
+      "notes": "Coordinated by Fadia. Agenda template shared in advance. Action items tracked."
+    },
+    {
+      "id": "REC-006",
+      "title": "Monthly R&R Alumni Stipend Processing",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "frequency": "MONTHLY",
+      "notes": "Process monthly data/airtime stipends for R&R alumni network leadership."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "RR-001",
+      "title": "Define R&R 2026 Theme & Strategic Framework",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN",
+        "DAN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-03-14",
+      "dependencies": [],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "HHCT primary; 11th Hour aligned."
+      },
+      "notes": "Set 2026 course theme: Movement Building in the Age of State Clampdown. Inform curriculum, facilitator recruitment, and comms tone.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "RR-002",
+      "title": "Confirm R&R 2026 Budget & Donor Ceiling",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-03-10",
+      "due_date": "2026-03-20",
+      "dependencies": [
+        "RR-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "HHCT MOU ceiling applies. Cross-reference DONOR_RR_Budget."
+      },
+      "notes": "Finalise per-participant cost model. Confirm 11th Hour $30k allocation is ring-fenced. Budget lines: accommodation, flights, venue, catering, facilitator fees.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "RR-003",
+      "title": "Procure Venue for R&R 2026 Course",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-03-20",
+      "due_date": "2026-05-30",
+      "dependencies": [
+        "RR-002"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Comparative quotations required per DONOR_RR MOU procurement policy."
+      },
+      "notes": "Obtain minimum 3 quotes. Venue must accommodate ~30 participants residential, 28 Sep – 16 Oct 2026. Catering included.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "RR-004",
+      "title": "Update R&R Curriculum & Facilitator Pack",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "DAN",
+        "TAT",
+        "TG"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-08-15",
+      "dependencies": [
+        "RR-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Curriculum refresh must reflect 2026 theme."
+      },
+      "notes": "Update modules: anti-SLAPP, NDC accountability, mine blasting jurisprudence, wellness for activists. Brief all facilitators by end of August.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "RR-005",
+      "title": "Publish R&R 2026 Call for Nominations",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN",
+        "FS",
+        "TAT"
+      ],
+      "start_date": "2026-03-15",
+      "due_date": "2026-03-31",
+      "dependencies": [
+        "RR-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Aligned to HHCT Outcome 2 relaunch objective."
+      },
+      "notes": "Publish call via CER website, alumni network, partner organisations. Coordinate with Ask Karabo comms for social media push.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "RR-006",
+      "title": "Design R&R Participant Selection Framework",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-03-15",
+      "due_date": "2026-04-15",
+      "dependencies": [
+        "RR-005"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Must align with donor diversity and inclusion outcomes."
+      },
+      "notes": "Develop scoring rubric. Prioritise women, marginalised communities, extractive-affected areas. Document for donor reporting.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "RR-007",
+      "title": "Shortlist & Confirm R&R 2026 Participants",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK",
+        "DAN"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "RR-006"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Selection must be documented for donor reporting."
+      },
+      "notes": "Shortlist ~30 activists. Send confirmation letters, travel briefing packs and pre-reading. Confirm dietary & accessibility needs.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "RR-008",
+      "title": "Deliver R&R 2026 Course",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN",
+        "TAT",
+        "DAN",
+        "TG",
+        "FS"
+      ],
+      "start_date": "2026-09-28",
+      "due_date": "2026-10-16",
+      "dependencies": [
+        "RR-003",
+        "RR-004",
+        "RR-007"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Core HHCT funded flagship. 11th Hour $30k supports this event."
+      },
+      "notes": "3-week residential Rights & Remedies course. Theme: Movement Building in the Age of State Clampdown. All staff on deck. Daily M&E check-ins.",
+      "type": "event",
+      "priority": "high"
+    },
+    {
+      "id": "RR-009",
+      "title": "Finalise M&E Framework for R&R 2025 Cohort",
+      "pillar": "RR",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TN",
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-03-31",
+      "dependencies": [],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Required for HHCT impact reporting."
+      },
+      "notes": "Develop tracking templates for 2025 cohort project action plan implementation. Deploy survey tool for 6-month post-course check-in.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "RR-010",
+      "title": "Community Visit 1 — Eastern Cape Teach Back",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "TAT",
+        "FS",
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-03-31",
+      "dependencies": [
+        "RR-009"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Community visits documented for HHCT Outcome 1 reporting."
+      },
+      "notes": "Visit R&R 2025 cohort in Eastern Cape. Teach-back session, review project action plan progress, collect M&E data.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "RR-011",
+      "title": "Community Visit 2 — Gauteng Teach Back",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "TAT",
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "RR-010"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "HHCT Outcome 1 reporting."
+      },
+      "notes": "Visit Gauteng-based R&R 2025 cohort. Peer exchange workshop. Document implementation progress and challenges.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "RR-012",
+      "title": "Community Visit 3 — Port Nolloth Teach Back",
+      "pillar": "RR",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "DAN",
+        "FS"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-06-30",
+      "dependencies": [
+        "RR-011"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Third of three planned community visits."
+      },
+      "notes": "Visit Port Nolloth site. Peer exchange, project action plan review.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "RR-013",
+      "title": "Analyse 5+ Years of R&R Alumni Data",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS",
+        "TN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "RR-009"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Feeds into impact report required by HHCT."
+      },
+      "notes": "Pull together 5+ years of alumni data. Analyse trajectories: legal wins, movement roles, organisational growth. Draft visualisations for impact report.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "RR-014",
+      "title": "Draft & Publish R&R Alumni Impact Report",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN",
+        "DAN",
+        "FS"
+      ],
+      "start_date": "2026-05-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "RR-013",
+        "RR-012"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Public-facing report required for HHCT Year 3 reporting."
+      },
+      "notes": "Commission designer. Include alumni case studies, data visualisations, testimonials. Publish on CER website and R&R microsite.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "RR-015",
+      "title": "Develop 2027–2030 R&R Fundraising Strategy",
+      "pillar": "RR",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-08-01",
+      "due_date": "2026-11-30",
+      "dependencies": [
+        "RR-014"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Align to HHCT multi-year structure."
+      },
+      "notes": "Define R&R 2027-2030 vision. Map funding landscape. Draft theory of change for next phase. Propose scale model.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "AK-001",
+      "title": "Finalise Ask Karabo Communications Strategy",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "TG",
+        "MK"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-15",
+      "dependencies": [],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Campaign comms budget line."
+      },
+      "notes": "Finalise comms plan: demo videos, dissemination strategy, website update roadmap. Align with Portal team on messaging consistency.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "AK-002",
+      "title": "Launch Ask Karabo Website Phase 2",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "TG",
+        "FS"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "AK-001"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Websites & Social Media budget line."
+      },
+      "notes": "Implement phase 2 website design. Data-free, mobile-first. Include question submission portal, EJ resource library, community radio station links.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "AK-003",
+      "title": "Plan & Coordinate Ask Karabo Roadshow Logistics",
+      "pillar": "ALUM",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TAT",
+        "TN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-04-15",
+      "dependencies": [
+        "AK-001"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Roadshow logistics: travel, venue, catering."
+      },
+      "notes": "Plan 6-day mobile clinic roadshow (7 CER staff + 30 participants per site). Confirm sites, book travel, accommodation and venues. Coordinate with ad hoc clinic committee.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "AK-004",
+      "title": "Deliver Ask Karabo Roadshow — Mobile Clinic",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "TG",
+        "DAN",
+        "TN",
+        "FS"
+      ],
+      "start_date": "2026-05-01",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "AK-002",
+        "AK-003"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Core AK campaign activity."
+      },
+      "notes": "Deliver mobile legal clinic roadshow across 3-6 sites. 30 participants per session. Film and photograph for content. Coordinate with community media.",
+      "type": "event",
+      "priority": "high"
+    },
+    {
+      "id": "AK-005",
+      "title": "Plan & Facilitate x3 Youth & Learner Workshops",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "FS",
+        "TN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "AK-001"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Youth engagement budget line."
+      },
+      "notes": "Workshops for learners and varsity students on environmental rights and EJ. Demystify narratives, build EJ literacy. Include data-free interactive elements.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "AK-006",
+      "title": "Finalise CME Guides — Mine Rehab & Children's Rights",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN",
+        "TG"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "AK-001"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Printing, design and translation under AK budget."
+      },
+      "notes": "Finalise 2 CME guides: (1) Mine Rehabilitation, (2) Environment & Children's Rights. Commission translation into 2 languages. Publish and distribute.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "AK-007",
+      "title": "Develop Learner Environmental Justice Curriculum",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN",
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "AK-005"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Curriculum development for youth programme."
+      },
+      "notes": "Formalise structure of learner environmental programme. Develop EJ curriculum for schools. Align with national curriculum where possible.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "AK-008",
+      "title": "Integrate Ask Karabo with Environmental Violations Portal",
+      "pillar": "ALUM",
+      "owner_id": "TG",
+      "support_owner_ids": [
+        "TAT",
+        "FS"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-09-30",
+      "dependencies": [
+        "AK-002",
+        "AK-004"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Portal integration: IT support required."
+      },
+      "notes": "Streamline violation reporting from AK campaign into portal. Train roadshow participants on portal usage. Improve data flow to case and advocacy teams.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "AK-009",
+      "title": "Human Rights Festival — CER Participation",
+      "pillar": "ALUM",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-03-21",
+      "dependencies": [],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Printing and travel budget line."
+      },
+      "notes": "Represent CER at Human Rights Festival. Distribute AK materials, CME guides and portal info. Film content for social media.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "AK-010",
+      "title": "Produce Ask Karabo Merchandise & Promo Materials",
+      "pillar": "ALUM",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TAT"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "AK-001"
+      ],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Project promotion budget line."
+      },
+      "notes": "Design and procure AK branded merchandise for roadshows: tote bags, stickers, printed guides. Align with website and campaign visual identity.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-001",
+      "title": "Monitor Portfolio Committees (Monthly)",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Documented in monthly parliamentary liaison reports."
+      },
+      "notes": "Monitor: forestry, fisheries, environment; mineral & petroleum; energy & electricity; water & sanitation. Share updates via knowledge hub. Involve R&R alumni.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "LR-002",
+      "title": "Track New Gazettes, Law Reports & Cabinet Statements",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Internal legal intelligence function."
+      },
+      "notes": "Monitor ELA newsletters, Saflii law reports, cabinet statements. Circulate relevant updates to all CER attorneys through shared knowledge hub. Flag MPRDA/UPRDA amendments.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-003",
+      "title": "Draft Mine Blasting Community Guide",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TAT",
+        "TG"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-06-30",
+      "dependencies": [
+        "LR-002"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "AS&T-Mining collaboration."
+      },
+      "notes": "Finalise community-facing guide on mine blasting standards. Cover: blast risk committees, seismograph installation, reporting to Mine Health & Safety Inspectorate. Translate into Zulu and Sotho.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-004",
+      "title": "Mobilise Activists for Parliamentary Submissions",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TN",
+        "TAT"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-11-30",
+      "dependencies": [
+        "LR-001",
+        "LR-003"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Bringing Parliament to activists."
+      },
+      "notes": "Facilitate R&R alumni and community partner engagement with parliamentary processes. Facilitate parliamentary questions for written answer. Run CME-style accessible submission campaign.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-005",
+      "title": "Design Accessible Parliamentary Submissions Campaign",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TAT",
+        "TN"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "LR-004"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Comms budget for campaign design."
+      },
+      "notes": "Design campaign making draft law amendments easy to understand. Develop submission template for activists. Disseminate via AK platform, CER website and partner networks.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-006",
+      "title": "Develop Law Reform Media & Op-Ed Strategy",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TG",
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "LR-001"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Strategic comms budget."
+      },
+      "notes": "Write and place 2+ op-eds: (1) EJ leadership & women defenders; (2) admin justice & EJ. Draft academic article on CME, mine blasting or EJ movement for scholarly publication.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-007",
+      "title": "Launch Imbabala Mine Rehabilitation Litigation",
+      "pillar": "STRAT",
+      "owner_id": "TG",
+      "support_owner_ids": [
+        "DAN",
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-09-30",
+      "dependencies": [
+        "LR-003"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Counsel fees and court costs."
+      },
+      "notes": "Launch precedent-setting mine rehabilitation case. Engage James and correspondent counsel. Coordinate community plaintiff support. Target first/second quarter filing.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "LR-008",
+      "title": "Civil Damages Blasting Case — Case Building",
+      "pillar": "STRAT",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TG"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-12-31",
+      "dependencies": [
+        "LR-003"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Legal research and workshop costs."
+      },
+      "notes": "Build civil damages claim for community infrastructure damage from mine blasting. Develop jurisprudence on polluter-pays principle. Coordinate technical seismograph evidence.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-009",
+      "title": "Anti-SLAPP Engagement with CALS",
+      "pillar": "STRAT",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Travel costs for in-person engagements."
+      },
+      "notes": "Continue engagement with CALS on anti-SLAPP campaign and policy advocacy. Track legislative developments. Support activists facing SLAPP suits.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-010",
+      "title": "Collate CME Statistics & Revive Disclosure Advocacy",
+      "pillar": "STRAT",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-10-31",
+      "dependencies": [
+        "LR-001"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "PAIA fees budget line."
+      },
+      "notes": "Collate CME statistics across departments via PAIA requests. Advocate for consistent publication of CME stats. Engage local government on violation reporting chains.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-011",
+      "title": "Incorporate CER Work into NDC Accountability Advocacy",
+      "pillar": "STRAT",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "TG",
+        "DAN"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-10-31",
+      "dependencies": [
+        "LR-006"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "AS&T-PCC joint programme advocacy."
+      },
+      "notes": "Integrate AS&T community and CME work into NDC implementation tracking. Publish at least 2x op-eds on CME-Just Transition linkages. Coordinate with PCC team.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "LR-012",
+      "title": "Women Activists Profiling & Sequel Report",
+      "pillar": "STRAT",
+      "owner_id": "TG",
+      "support_owner_ids": [
+        "TAT"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-10-31",
+      "dependencies": [
+        "LR-006"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Report designer fees and data costs."
+      },
+      "notes": "Profile women activists in environmental and climate activism. Produce sequel report on how women are disproportionately affected by climate change. Target mid-year publication.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-001",
+      "title": "HHCT RR Addendum — Confirm Implementation Schedule",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-15",
+      "dependencies": [],
+      "cluster": "D",
+      "donor": {
+        "stream": "RR",
+        "notes": "Per DONOR_RR_Addendum_Jan2026 requirements."
+      },
+      "notes": "Review Jan 2026 addendum obligations. Confirm implementation schedule with team. Flag any deviations from MOU Annexure A budget lines.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "OPS-002",
+      "title": "Q1 M&E Data Collection",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TN",
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-04-15",
+      "dependencies": [
+        "OPS-001"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Required for all active donor streams."
+      },
+      "notes": "Collect Q1 M&E data across all pillars. Update tracking template. Flag outcomes at risk. Prepare data pack for narrative report.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-003",
+      "title": "Q1 Financial Reconciliation & Burn Rate Review",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "OPS-002"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Per DONOR_RR_Budget Annexure A."
+      },
+      "notes": "Reconcile Q1 actual spend vs budget. Identify underspend/overspend by line item. Flag reallocation needs to MK for approval before Q2 activities begin.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-004",
+      "title": "Draft Q1 Donor Narrative Report — HHCT",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS",
+        "TN"
+      ],
+      "start_date": "2026-04-15",
+      "due_date": "2026-05-15",
+      "dependencies": [
+        "OPS-002",
+        "OPS-003"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "RR",
+        "notes": "HHCT quarterly reporting requirement."
+      },
+      "notes": "Draft quarterly narrative report for HHCT. Include: activities vs planned, outcome progress, financial summary, risks and mitigation. Circulate internally before submission.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-005",
+      "title": "Submit Q1 Report to HHCT & 11th Hour",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-05-15",
+      "due_date": "2026-05-31",
+      "dependencies": [
+        "OPS-004"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "RR",
+        "notes": "Submit via donor portal. Retain signed copy."
+      },
+      "notes": "Final submission of Q1 report. Include financial statements. File confirmation of receipt.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-006",
+      "title": "Q2 M&E Data Collection",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-07-15",
+      "dependencies": [
+        "OPS-005"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "All active donor streams."
+      },
+      "notes": "Collect Q2 M&E data. Mid-year review: assess if on track for annual targets. Prepare adjustment recommendations for MK.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-007",
+      "title": "Q2 Financial Reconciliation & Mid-Year Review",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-07-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "OPS-006"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Mid-year financial review."
+      },
+      "notes": "Full mid-year financial reconciliation. Reallocate underspent budget lines if needed. Prepare mid-year financial narrative.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-008",
+      "title": "Draft Q2 Donor Narrative Report — HHCT",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-07-15",
+      "due_date": "2026-08-15",
+      "dependencies": [
+        "OPS-006",
+        "OPS-007"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "RR",
+        "notes": "Mid-year narrative report."
+      },
+      "notes": "Draft mid-year narrative. Highlight R&R preparations, AK roadshow outcomes, law reform activities. Submit by end of August.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-009",
+      "title": "Submit Q2 Report & Board Presentation",
+      "pillar": "OPS",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-08-15",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "OPS-008"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "RR",
+        "notes": "Board submission for CER governance."
+      },
+      "notes": "Submit Q2 report to donors. Prepare and present AS&T mid-year update to CER Board. Include risk register and strategy adjustments.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-010",
+      "title": "Document & File Management System Maintenance",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "OPS",
+        "notes": "SharePoint/shared drive access."
+      },
+      "notes": "Maintain structured, accessible document filing system. Weekly updates. Ensure all programme outputs are consistently filed. Reduces admin risk and improves continuity.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-011",
+      "title": "Task Tracking & Team Commitment Follow-Up",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "OPS",
+        "notes": "Admin coordination."
+      },
+      "notes": "Bi-weekly follow-up on team task commitments. Use task tracker and reminders. Flag overdue items to MK. Keep action log from all team meetings.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "OPS-012",
+      "title": "R&R M&E Support — Track Participant Progress",
+      "pillar": "OPS",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-09-28",
+      "due_date": "2026-10-31",
+      "dependencies": [
+        "RR-008"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "M&E tracking per cohort period."
+      },
+      "notes": "Track R&R 2026 participant progress during and after the course. Collect post-course engagement data. Administer surveys. Input to impact report pipeline.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-001",
+      "title": "Purchase Portable Training Workshop Kit",
+      "pillar": "TRAIN",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-28",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "RR",
+        "notes": "Workshop and meeting costs budget line."
+      },
+      "notes": "Procure portable training kit: flip charts, markers, printed materials, basic AV. Used across all community visit and training activities.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-002",
+      "title": "Plan High-Impact Community Legal Training",
+      "pillar": "TRAIN",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN",
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-05-31",
+      "dependencies": [
+        "TRAIN-001"
+      ],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Venue, catering, travel budget line."
+      },
+      "notes": "Plan at least 1 short high-impact training for community struggles: mine blasting, climate impact assessments, or defender safety. Tailor to active litigation/advocacy needs.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-003",
+      "title": "Deliver High-Impact Community Legal Training (June)",
+      "pillar": "TRAIN",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN",
+        "TN"
+      ],
+      "start_date": "2026-06-01",
+      "due_date": "2026-06-30",
+      "dependencies": [
+        "TRAIN-002"
+      ],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Core AS&T training delivery."
+      },
+      "notes": "Deliver planned community training. Cover: legal remedies, evidence gathering, regulatory engagement, safety protocols for activists.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-004",
+      "title": "Waste Management Legal Training",
+      "pillar": "TRAIN",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-08-31",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Workshop budget line."
+      },
+      "notes": "Plan and lead at least 1 waste management legal training. Identify municipalities and corporates for accountability work. Coordinate with PCC team on waste violation data.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-005",
+      "title": "Gender & EJ 3-Day Workshop (Mmatshilo Motsei)",
+      "pillar": "TRAIN",
+      "owner_id": "TG",
+      "support_owner_ids": [
+        "MK",
+        "TAT"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-06-30",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Facilitator fee, venue and catering."
+      },
+      "notes": "3-day gender workshop facilitated by Mmatshilo Motsei. Consolidate CER Gender and EJ work. All AS&T attorneys attend. Output: internal gender lens framework.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-006",
+      "title": "Wellness Guide for Activists — Finalise & Publish",
+      "pillar": "TRAIN",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-07-31",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Printing and report designer fees."
+      },
+      "notes": "Improve and finalise the mini wellness guide for activists. Commission design. Print and distribute via roadshow, R&R course, and partner networks.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-007",
+      "title": "Deliver x2 Wellness Trainings for Activists",
+      "pillar": "TRAIN",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-08-31",
+      "dependencies": [
+        "TRAIN-006"
+      ],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Facilitator, venue, catering, travel budget lines."
+      },
+      "notes": "Plan and lead 2 wellness trainings. Cover: burnout prevention, security practices, self-care as political act. Include at least 1 for R&R alumni cohort.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-008",
+      "title": "Political Workshop — School of Unity & Liberation Pilot",
+      "pillar": "TRAIN",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-09-01",
+      "due_date": "2026-11-30",
+      "dependencies": [
+        "TRAIN-003"
+      ],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Venue, accommodation, flights budget lines."
+      },
+      "notes": "Political workshop for 10 selected activists using School of Unity and Liberation curriculum. Test run. Document for scaling in future years.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-009",
+      "title": "Paralegal Partnership — ACAOSA/CAOSA Training",
+      "pillar": "TRAIN",
+      "owner_id": "DAN",
+      "support_owner_ids": [
+        "TAT"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "TRAIN",
+        "notes": "Workshop costs."
+      },
+      "notes": "Formalise partnership with at least 1 national paralegal body (ACAOSA/CAOSA). Deliver EJ-focused paralegal training. Receive community-based advice training in exchange.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "TRAIN-010",
+      "title": "Team Leadership Development Programme",
+      "pillar": "TRAIN",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-12-31",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "OPS",
+        "notes": "R5000 per team member training budget."
+      },
+      "notes": "Year-long team development. Each AS&T member owns one strategic leadership domain: budgeting, community management, fundraising, media, M&E, or external representation.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-001",
+      "title": "R&R Alumni Network Wide Convening",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK",
+        "FS"
+      ],
+      "start_date": "2026-04-15",
+      "due_date": "2026-06-30",
+      "dependencies": [
+        "RR-009"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Covered under alumni strengthening objective."
+      },
+      "notes": "Convene full alumni network meeting. Agenda: reflect on 2025, develop 2026 action plan, consolidate/elect leadership structure, set NWG constitution. Hybrid format.",
+      "type": "event",
+      "priority": "high"
+    },
+    {
+      "id": "ALUM-002",
+      "title": "Alumni Leadership & Governance Training",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-04-30",
+      "dependencies": [
+        "ALUM-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Facilitator, accommodation, flights for participants."
+      },
+      "notes": "Leadership and governance training for alumni network. Strengthen governance systems, build capacity for self-management, clarify roles and accountability structures.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "ALUM-003",
+      "title": "Alumni Strategic Planning Workshop",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-05-01",
+      "due_date": "2026-06-30",
+      "dependencies": [
+        "ALUM-002"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Accommodation, venue, catering for participants."
+      },
+      "notes": "Strategic planning workshop for alumni network. Develop comprehensive 2026-2028 strategy. Enable independent programme delivery from provincial structures.",
+      "type": "event",
+      "priority": null
+    },
+    {
+      "id": "ALUM-004",
+      "title": "Alumni NWG — Finalise TOR & Constitution",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-31",
+      "dependencies": [],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Virtual engagement."
+      },
+      "notes": "Meeting with Alumni NWG to finalise TOR/Constitution, governance structures, programmes, funding model and coalition planning for 2026.",
+      "type": "task",
+      "priority": "high"
+    },
+    {
+      "id": "ALUM-005",
+      "title": "Commission 3 Alumni Impact Case Studies",
+      "pillar": "ALUM",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "RR-013"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Data support and communication costs."
+      },
+      "notes": "Commission 3 high-quality, public-facing case studies written by R&R alumni on successful use of legal remedies post-training. Edit and publish on CER website.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-006",
+      "title": "Alumni Monthly Stipend Programme Launch",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-15",
+      "dependencies": [],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Data support and communication costs budget line."
+      },
+      "notes": "Set up and administer monthly financial stipends for R&R alumni network leadership. Stipends for data/airtime to support activist work and CER correspondence.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-007",
+      "title": "Community Media Strategy Development",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "TAT"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-07-31",
+      "dependencies": [
+        "ALUM-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Community media engagement."
+      },
+      "notes": "Develop community media engagement strategy linking alumni network to CER advocacy. Train alumni on leveraging community radio and digital platforms for EJ messaging.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-008",
+      "title": "Movement Support — SAWC, MEJCON, VEJA",
+      "pillar": "ALUM",
+      "owner_id": "TN",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Workshop and meeting costs."
+      },
+      "notes": "Continued support to environmental justice movements: SAWC, MEJCON, VEJA. Attend convenings, provide legal information, facilitate peer learning.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-009",
+      "title": "Write R&R Op-Ed — Movement Building & State Clampdown",
+      "pillar": "ALUM",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-07-01",
+      "due_date": "2026-09-15",
+      "dependencies": [
+        "RR-001"
+      ],
+      "cluster": "A",
+      "donor": {
+        "stream": "RR",
+        "notes": "Strategic comms."
+      },
+      "notes": "Write and publish op-ed setting the tone for the 2026 R&R theme. Target Mail & Guardian or Daily Maverick. Pre-R&R publication.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "ALUM-010",
+      "title": "EJFund Board — Chair Quarterly Meetings",
+      "pillar": "ALUM",
+      "owner_id": "MK",
+      "support_owner_ids": [],
+      "start_date": "2026-02-24",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "RR",
+        "notes": "Travel for in-person board meetings."
+      },
+      "notes": "Chair EJFund Board: strategic planning (Feb), minimum 4 quarterly meetings, attend and present at annual Grantee Convening. Maintain partnership with EJFund grantees.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "STRAT-001",
+      "title": "Convene EJ Partner Calendar Alignment Session",
+      "pillar": "STRAT",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-02-24",
+      "due_date": "2026-03-15",
+      "dependencies": [],
+      "cluster": null,
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Virtual: minimal cost."
+      },
+      "notes": "Convene key EJ partners (EJFund, Benchmarks, groundWork, LAC, PILG) for 2026 calendar alignment. Create shared 2026-2027 movement calendar. Facilitate mutual promotion.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "STRAT-002",
+      "title": "Zero Hour 2.0 — Plan, Draft & Publish",
+      "pillar": "STRAT",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "DAN",
+        "MK"
+      ],
+      "start_date": "2026-05-01",
+      "due_date": "2026-11-30",
+      "dependencies": [
+        "LR-001"
+      ],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Printing, design and travel budget lines."
+      },
+      "notes": "Plan, prepare and publish Zero Hour 2.0 report. Document state of environmental enforcement and activist criminalisation. Commission designer. Align with R&R and AK comms calendar.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "STRAT-003",
+      "title": "HRD Response Funding Database",
+      "pillar": "STRAT",
+      "owner_id": "TAT",
+      "support_owner_ids": [
+        "TN"
+      ],
+      "start_date": "2026-04-01",
+      "due_date": "2026-08-31",
+      "dependencies": [],
+      "cluster": "C",
+      "donor": {
+        "stream": "LR",
+        "notes": "Internal capacity building."
+      },
+      "notes": "Map and develop comprehensive database of HRD response funding organisations. Collate stats on activists supported. Help activists at risk access emergency funding.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "STRAT-004",
+      "title": "Environmental Violations Portal — Reports & Training",
+      "pillar": "STRAT",
+      "owner_id": "TG",
+      "support_owner_ids": [
+        "FS",
+        "TAT"
+      ],
+      "start_date": "2026-03-01",
+      "due_date": "2026-11-30",
+      "dependencies": [],
+      "cluster": "B",
+      "donor": {
+        "stream": "AK",
+        "notes": "Portal guides, reporting dashboard, training docs."
+      },
+      "notes": "Ongoing portal training across all programme activities. Develop comprehensive report on portal usage and impact. Publish portal stats quarterly. Align with case team needs.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "BUD-001",
+      "title": "Q1 Budget Variance Review",
+      "pillar": "BUD",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-03-31",
+      "due_date": "2026-04-15",
+      "dependencies": [
+        "OPS-003"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Covers RR and SADF/11th Hour streams."
+      },
+      "notes": "Review Q1 actual spend vs AS&T FY27 budget sheet. Flag lines >10% off-track. Propose reallocations. Report to Executive.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "BUD-002",
+      "title": "Q2 Budget Variance Review",
+      "pillar": "BUD",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-06-30",
+      "due_date": "2026-07-15",
+      "dependencies": [
+        "OPS-007"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Mid-year budget review."
+      },
+      "notes": "Review mid-year budget position across all pillars. Cross-reference BUDGET_FY27_29_Consolidated_Draft. Confirm forecasts for H2 especially R&R course.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "BUD-003",
+      "title": "Q3 Budget Variance Review",
+      "pillar": "BUD",
+      "owner_id": "MK",
+      "support_owner_ids": [
+        "FS"
+      ],
+      "start_date": "2026-09-30",
+      "due_date": "2026-10-15",
+      "dependencies": [
+        "BUD-002"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "Post-R&R course financial review."
+      },
+      "notes": "Q3 review immediately post R&R course delivery. Verify all course expenses reconciled. Check against DONOR_RR budget ceiling. Prepare year-end forecast.",
+      "type": "task",
+      "priority": null
+    },
+    {
+      "id": "BUD-004",
+      "title": "Year-End Financial Close & Donor Reconciliation",
+      "pillar": "BUD",
+      "owner_id": "FS",
+      "support_owner_ids": [
+        "MK"
+      ],
+      "start_date": "2026-11-01",
+      "due_date": "2026-12-31",
+      "dependencies": [
+        "BUD-003"
+      ],
+      "cluster": "D",
+      "donor": {
+        "stream": "Mixed",
+        "notes": "All donor streams — year-end close."
+      },
+      "notes": "Full year-end financial close. Reconcile all donor streams. Prepare financial statements for annual audit. Input into FY28 budget planning cycle.",
+      "type": "task",
+      "priority": null
+    }
+  ],
+  "events": [],
+  "__overlays": {
+    "version": 1,
+    "updated_at": "2026-02-24T12:00:00.000Z",
+    "deletions": [],
+    "task_overrides": {},
+    "new_tasks": [],
+    "recurrence_overrides": {}
+  }
+}
+
