@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>NoobiOS · Flow Tasks</title>
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero" role="banner">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="brandrow">
+        <div class="brand">
+          <div class="brand__title">
+            <img class="brand__avatar" src="./Noobi%20Banner.jpg" alt="" onerror="this.style.display='none'">
+            <span class="brand__name">NoobiOS</span>
+            <span class="brand__pill">Flow Engine · Local-first</span>
+          </div>
+          <div id="metaLine" class="brand__sub">Loading…</div>
+        </div>
+
+        <div class="iconbar">
+          <button id="btnZen" class="iconbtn" aria-label="Toggle Zen mode" title="Zen mode">
+            <svg class="icon"><use href="#i-zen"></use></svg>
+          </button>
+
+          <button id="btnToggleFilters" class="iconbtn" aria-label="Toggle filters" title="Filters">
+            <svg class="icon"><use href="#i-filter"></use></svg>
+          </button>
+
+          <button id="btnMore" class="iconbtn" aria-label="More" title="More">
+            <svg class="icon"><use href="#i-more"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Inbox capture -->
+      <div class="inbox" role="search">
+        <svg class="icon" aria-hidden="true"><use href="#i-inbox"></use></svg>
+        <input id="inboxInput" type="text" placeholder="Inbox… (type + Enter)" autocomplete="off" />
+        <button id="btnInboxAdd" class="pill" type="button">Add</button>
+      </div>
+
+      <!-- Micro AI hint row -->
+      <div id="aiHintRow" class="ai-hint" hidden>
+        <span id="aiHintText">AI ready.</span>
+        <button id="btnAiHintOpen" class="pill pill--ghost" type="button">Review</button>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div id="filterbar" class="filterbar">
+      <div class="filterbar__inner">
+        <select id="filterPillar" class="sel" aria-label="Filter by pillar">
+          <option value="any">All Pillars</option>
+        </select>
+
+        <select id="filterOwner" class="sel" aria-label="Filter by owner">
+          <option value="any">All Owners</option>
+        </select>
+
+        <select id="filterMonth" class="sel" aria-label="Filter by month">
+          <option value="any">All Months</option>
+        </select>
+
+        <select id="filterStatus" class="sel" aria-label="Filter by status">
+          <option value="any">All Status</option>
+          <option value="open">Open</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <input id="searchInput" class="search" type="search" placeholder="Search title/notes…" />
+        <select id="sortBy" class="sel" aria-label="Sort">
+          <option value="due">Sort: Due</option>
+          <option value="start">Sort: Start</option>
+          <option value="priority">Sort: Priority</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+    <!-- Summary -->
+    <section id="summary" class="summary" aria-label="Summary">
+      <div class="sumcard">
+        <div class="lbl">Today</div>
+        <div id="sumToday" class="val">—</div>
+      </div>
+      <div class="sumcard">
+        <div class="lbl">This week</div>
+        <div id="sumWeek" class="val">—</div>
+      </div>
+      <div class="sumcard has-danger">
+        <div class="lbl">Overdue</div>
+        <div id="sumOverdue" class="val">—</div>
+      </div>
+    </section>
+
+    <!-- View header -->
+    <div class="listHead">
+      <div>
+        <div id="viewTitle" class="listHead__title">…</div>
+        <div id="storageInfo" class="muted small">—</div>
+      </div>
+
+      <div class="headActions">
+        <button id="btnRebalance" class="btn" type="button" title="Suggest a better Today plan">
+          <svg class="icon"><use href="#i-spark"></use></svg>
+          Rebalance
+        </button>
+
+        <button id="btnQuickAdd" class="btn primary" type="button">
+          <svg class="icon"><use href="#i-plus"></use></svg>
+          Quick Add
+        </button>
+      </div>
+    </div>
+
+    <!-- Recurring rules -->
+    <section id="recurringPanel" class="recurring" hidden aria-label="Recurring rules"></section>
+
+    <!-- Pillars dashboard (kept lightweight, appears AFTER tasks) -->
+    <section id="pillarsDash" class="dash" hidden aria-label="Pillars dashboard">
+      <div class="dashCard">
+        <h3 class="dashTitle">By Pillar</h3>
+        <div id="dashByPillar"></div>
+      </div>
+      <div class="dashCard">
+        <h3 class="dashTitle">By Owner</h3>
+        <div id="dashByOwner"></div>
+      </div>
+    </section>
+
+    <!-- Main list -->
+    <section class="list" aria-label="Task list">
+      <div id="list" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Bottom navigation -->
+  <nav class="bottomnav" aria-label="Bottom navigation">
+    <div class="bottomnav__inner">
+      <button class="tab is-active" data-view="today" aria-current="page">
+        <svg><use href="#i-sun"></use></svg><span>Today</span>
+      </button>
+      <button class="tab" data-view="week">
+        <svg><use href="#i-week"></use></svg><span>Week</span>
+      </button>
+      <button class="tab" data-view="month">
+        <svg><use href="#i-month"></use></svg><span>Month</span>
+      </button>
+      <button class="tab" data-view="upcoming">
+        <svg><use href="#i-up"></use></svg><span>Upcoming</span>
+      </button>
+      <button class="tab" data-view="completed">
+        <svg><use href="#i-check"></use></svg><span>Done</span>
+      </button>
+      <button class="tab" data-view="events">
+        <svg><use href="#i-star"></use></svg><span>Events</span>
+      </button>
+      <button class="tab" data-view="pillars">
+        <svg><use href="#i-grid"></use></svg><span>Pillars</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+  <!-- FAB -->
+  <button id="fab" class="fab" aria-label="Quick Add">
+    <svg><use href="#i-plus"></use></svg>
+  </button>
+
+  <!-- Quick Add sheet -->
+  <div id="quickAddSheet" class="overlay" hidden>
+    <div class="backdrop" data-close="quickAddSheet"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Quick add">
+      <div class="sheetHead">
+        <strong>Quick Add</strong>
+        <button class="iconbtn" data-close="quickAddSheet" aria-label="Close">
+          <svg class="icon"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="sheetBody">
+        <div class="field">
+          <label>Title</label>
+          <input id="qaTitle" type="text" placeholder="e.g. Prep community mining presentation…" />
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Type</label>
+            <select id="qaType">
+              <option value="task">Task</option>
+              <option value="meeting">Meeting</option>
+              <option value="event">Event</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Priority</label>
+            <select id="qaPriority">
+              <option value="1">P1</option>
+              <option value="2" selected>P2</option>
+              <option value="3">P3</option>
+              <option value="4">P4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Start</label>
+            <input id="qaStart" type="date" />
+          </div>
+          <div class="field">
+            <label>Due</label>
+            <input id="qaDue" type="date" />
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Pillar</label>
+            <select id="qaPillar"></select>
+          </div>
+          <div class="field">
+            <label>Owner</label>
+            <select id="qaOwner"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Notes</label>
+          <textarea id="qaNotes" rows="3" placeholder="Optional…"></textarea>
+        </div>
+
+        <label class="checkline">
+          <input id="qaAiRefine" type="checkbox" />
+          Let AI refine this after saving
+        </label>
+
+        <div class="btnrow">
+          <button class="btn" data-close="quickAddSheet" type="button">Cancel</button>
+          <button id="btnQaSave" class="btn primary" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit sheet -->
+  <div id="editSheet" class="overlay" hidden>
+    <div class="backdrop" data-close="editSheet"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Edit item">
+      <div class="sheetHead">
+        <strong>Edit</strong>
+        <button class="iconbtn" data-close="editSheet" aria-label="Close">
+          <svg class="icon"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="sheetBody">
+        <input id="editId" type="hidden" />
+
+        <div class="field">
+          <label>Title</label>
+          <input id="editTitle" type="text" />
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Type</label>
+            <select id="editType">
+              <option value="">(auto)</option>
+              <option value="task">Task</option>
+              <option value="meeting">Meeting</option>
+              <option value="event">Event</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Priority</label>
+            <select id="editPriority">
+              <option value="">(auto)</option>
+              <option value="1">P1</option>
+              <option value="2">P2</option>
+              <option value="3">P3</option>
+              <option value="4">P4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Start</label>
+            <input id="editStart" type="date" />
+          </div>
+          <div class="field">
+            <label>Due</label>
+            <input id="editDue" type="date" />
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Pillar</label>
+            <select id="editPillar"></select>
+          </div>
+          <div class="field">
+            <label>Owner</label>
+            <select id="editOwner"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Notes</label>
+          <textarea id="editNotes" rows="4"></textarea>
+        </div>
+
+        <div class="actionGrid2">
+          <button id="btnEditAiRefine" class="btn" type="button">
+            <svg class="icon"><use href="#i-spark"></use></svg>
+            AI refine
+          </button>
+          <button id="btnEditMoveToday" class="btn" type="button">Move to Today</button>
+        </div>
+
+        <div class="btnrow">
+          <button id="btnDelete" class="btn danger" type="button">Delete</button>
+          <button class="btn" data-close="editSheet" type="button">Cancel</button>
+          <button id="btnEditSave" class="btn primary" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action sheet (long-press) -->
+  <div id="actionSheet" class="overlay" hidden>
+    <div class="backdrop" data-close="actionSheet"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Quick actions">
+      <div class="sheetHead">
+        <strong>Quick actions</strong>
+        <button class="iconbtn" data-close="actionSheet" aria-label="Close">
+          <svg class="icon"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="sheetBody">
+        <div class="muted small" id="actionTitle">—</div>
+        <div class="divider"></div>
+
+        <div class="actionGrid">
+          <button id="btnActionComplete" class="btn primary" type="button">Complete / Undo</button>
+          <button id="btnActionEdit" class="btn" type="button">Edit</button>
+          <button id="btnActionToday" class="btn" type="button">Move to Today</button>
+          <button id="btnActionDefer" class="btn" type="button">Defer 1 day</button>
+          <button id="btnActionAiRefine" class="btn" type="button">
+            <svg class="icon"><use href="#i-spark"></use></svg>
+            AI refine
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Review sheet (appears, then disappears) -->
+  <div id="aiReviewSheet" class="overlay" hidden>
+    <div class="backdrop" data-close="aiReviewSheet"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="AI suggestions">
+      <div class="sheetHead">
+        <strong>AI Suggestions</strong>
+        <button class="iconbtn" data-close="aiReviewSheet" aria-label="Close">
+          <svg class="icon"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="sheetBody">
+        <div id="aiReviewSummary" class="ai-summary">—</div>
+        <div id="aiOpsList" class="ai-ops"></div>
+
+        <div class="btnrow">
+          <button id="btnAiDiscard" class="btn" type="button">Discard</button>
+          <button id="btnAiApply" class="btn primary" type="button">Apply</button>
+        </div>
+
+        <div class="muted small" style="margin-top:10px">
+          Nothing changes until you Apply. All changes are stored as overlays.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More sheet -->
+  <div id="moreSheet" class="overlay" hidden>
+    <div class="backdrop" data-close="moreSheet"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="More options">
+      <div class="sheetHead">
+        <strong>More</strong>
+        <button class="iconbtn" data-close="moreSheet" aria-label="Close">
+          <svg class="icon"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="sheetBody">
+        <div class="moreBlock">
+          <div class="moreTitle">AI Engine</div>
+
+          <label class="checkline">
+            <input id="aiEnabled" type="checkbox" />
+            Enable AI engine
+          </label>
+
+          <label class="checkline">
+            <input id="aiAutoRefine" type="checkbox" />
+            Auto-refine on new tasks
+          </label>
+
+          <div class="grid2">
+            <div class="field">
+              <label>Provider</label>
+              <select id="aiProvider">
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="gemini">Google Gemini</option>
+                <option value="openai_compat">OpenAI-compatible (local/server)</option>
+                <option value="custom">Custom endpoint</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Model</label>
+              <input id="aiModel" type="text" placeholder="e.g. gpt-4o-mini / claude / gemini" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Endpoint (optional)</label>
+            <input id="aiEndpoint" type="text" placeholder="Leave blank for provider default" />
+          </div>
+
+          <div class="field">
+            <label>API Key</label>
+            <input id="aiKey" type="password" placeholder="Stored locally if you enable Remember" />
+          </div>
+
+          <label class="checkline">
+            <input id="aiRememberKey" type="checkbox" />
+            Remember key on this device
+          </label>
+
+          <div class="field">
+            <label>Custom Headers (JSON, optional)</label>
+            <textarea id="aiHeaders" rows="3" placeholder='{"Authorization":"Bearer {{KEY}}"}'></textarea>
+          </div>
+
+          <div class="actionGrid2">
+            <button id="btnAiSaveSettings" class="btn" type="button">Save AI settings</button>
+            <button id="btnAiClearSettings" class="btn danger" type="button">Clear</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <button id="btnExportOverlays" class="btn" type="button">Download overrides.json</button>
+        <button id="btnImportOverlays" class="btn" type="button">Import overrides.json</button>
+        <button id="btnBackupMerged" class="btn" type="button">Backup merged.json</button>
+
+        <div class="divider"></div>
+        <button id="btnResetOverlays" class="btn danger" type="button">Reset local overlays</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Icons -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M3 5h18v2l-7 7v5l-4 2v-7L3 7V5z"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M11 5h2v14h-2z"/><path d="M5 11h14v2H5z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.3 5.7l-1.4-1.4L12 9.2 7.1 4.3 5.7 5.7 10.6 10.6 5.7 15.5l1.4 1.4 4.9-4.9 4.9 4.9 1.4-1.4-4.9-4.9 4.9-4.9z"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 14h-3a3 3 0 01-6 0H5V5h14v12z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 6a6 6 0 100 12 6 6 0 000-12z"/></symbol>
+    <symbol id="i-week" viewBox="0 0 24 24"><path d="M7 2h2v2H7V2zm8 0h2v2h-2V2zM4 5h16a2 2 0 012 2v13a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm0 5h16v10H4V10z"/></symbol>
+    <symbol id="i-month" viewBox="0 0 24 24"><path d="M7 2h2v2H7V2zm8 0h2v2h-2V2zM4 5h16a2 2 0 012 2v13a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm0 4h16V7H4v2z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 2l6 6h-4v6h-4V8H6l6-6zm-8 18h16v2H4v-2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.5 6L20 10l-6.5 2L12 18l-1.5-6L4 10l6.5-2L12 2z"/></symbol>
+    <symbol id="i-zen" viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 6 6 11 9 11s9-5 9-11c0-5-4-9-9-9zm0 18c-2.8 0-7-4.3-7-9 0-3.9 3.1-7 7-7s7 3.1 7 7c0 4.7-4.2 9-7 9z"/></symbol>
+  </svg>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

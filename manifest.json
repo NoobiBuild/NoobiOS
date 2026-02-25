@@ -1,0 +1,15 @@
+{
+  "name": "NoobiBuilds Task Dashboard",
+  "short_name": "Noobi Tasks",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABGklEQVR4nO3aMQ7CMBRF0b8xQw2oV4gUoQwqk1J0lqQm3oI8m0mI1nH5m3s6m0y4n8b0wAAAAAAAAAAALDkq8r0bq5u2v0oWmZp0m0y3o8r0m6gkQm2l7pKX1g1b8mWc1o1y0m2g7qg5+oZg5oQyQyG6GQw3nYd5w2Y8m8pQm3gS1lN0o6+9s8m6gkQm2l7pKX1g1b8mWc1o1y0m2g7qg5+oZg5oQyQyG6GQw3nYd5w2Y8m8pQm3gS1lN0o6+9s8m6gkQm2l7pKX1g1b8mWc1o1y0m2g7qg5+oZg5oQyQyG6GQw3nYd5w2Y8m8oAAAAAAAAAAAD4G8oQYf7m0cZgAAAAAElFTkSuQmCC",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
